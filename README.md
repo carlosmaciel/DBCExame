@@ -8,4 +8,3 @@
 # Executar:
 - MySQL precisa estar aberto (garantir que o serviço MySQL80 esteja funcionando em services.msc)
 - Acessar pasta raiz do projeto executar:
-mvn spring-boot:run
