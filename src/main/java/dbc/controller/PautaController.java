@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -41,7 +42,18 @@ public class PautaController {
 		try {
 			logger.info("Consultando pautas");
 			List<Pautas> pautas = pautaService.findAll();
-			logger.info("Pautas: " + pautas);
+			return ResponseEntity.ok(pautas);
+		} catch (Exception e) {
+			logger.error("Erro ao consultar: " + e.getMessage());
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+		}
+	}
+	
+	@RequestMapping(value = "/validaSessao/{idPauta}", method = RequestMethod.GET)
+	public ResponseEntity<?> validaSessao(@PathVariable("idPauta") Long idPauta) {		
+		try {
+			logger.info("Validando sessão.");
+			Pautas pautas = pautaService.findPautasByIdAndSessao(idPauta);
 			return ResponseEntity.ok(pautas);
 		} catch (Exception e) {
 			logger.error("Erro ao consultar: " + e.getMessage());
@@ -54,6 +66,17 @@ public class PautaController {
 		try {
 			logger.error("Salvando pauta. Nome: " + pauta.getNome());
 			return ResponseEntity.ok(pautaService.savePauta(pauta));
+		} catch (Exception e) {
+			logger.error("Erro ao salvar pauta: " + e.getMessage());
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+		}        
+    }
+	
+	@RequestMapping(value = "/encerraSessao/", method = RequestMethod.PUT, produces = {"application/json"},  consumes = {"application/json"})
+    public ResponseEntity<?> encerraSessao(@Valid @RequestBody Pautas pauta) {
+		try {
+			logger.error("Encerrando sessão. Nome: " + pauta.getNome());
+			return ResponseEntity.ok(pautaService.encerraSessao(pauta));
 		} catch (Exception e) {
 			logger.error("Erro ao salvar: " + e.getMessage());
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());

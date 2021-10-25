@@ -1,5 +1,6 @@
 package dbc.service.pauta;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,20 @@ public class PautaService implements IPautaService {
 	public List<Pautas> findAll() throws Exception{
 		return pautaRepository.findAll();
 	}
+	
+	@Override
+	public Pautas findPautasByIdAndSessao(Long id) throws Exception{
+		return pautaRepository.findPautasByIdAndSessao(id, 1);
+	}
 
 	@Override
 	public Pautas savePauta(Pautas pauta) throws Exception {
 		return pautaRepository.saveAndFlush(pauta);
 	}
 
+	@Override
+	public Pautas encerraSessao(Pautas pauta) throws Exception {
+		pauta.setSessao(1);
+		return pautaRepository.saveAndFlush(pauta);
+	}
 }

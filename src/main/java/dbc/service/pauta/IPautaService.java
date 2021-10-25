@@ -9,4 +9,8 @@ public interface IPautaService {
 	List<Pautas> findAll() throws Exception;
 	
 	Pautas savePauta(Pautas pauta) throws Exception;
+	
+	Pautas findPautasByIdAndSessao(Long id) throws Exception;
+	
+	Pautas encerraSessao(Pautas pauta) throws Exception;
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 input[type=text], select, #cmb-voto-associado {
 	margin-bottom: 10px;	
 	width: 100%;
@@ -13,8 +12,7 @@ input[type=text], select, #cmb-voto-associado {
 	color: red;
 }
 
-#area-finalizar {
-	display: none;
+#resultado-sessao, #resultado-votacao {
 	text-align: center;
 }
 
@@ -24,7 +22,7 @@ input[type=text], select, #cmb-voto-associado {
 
 input[name="radio-voto"], #area-votar {
 	margin-right: 5px;
-	margin-bottom: 10px;
+	margin-bottom: 40px;
 }
 
 label[for="sim-radio-voto"], label[for="nao-radio-voto"] {
@@ -39,46 +37,4 @@ label[for="sim-radio-voto"], label[for="nao-radio-voto"] {
 
 #lbl-voto-sim, #lbl-voto-NAO {
 	font-weight: normal;
-=======
-input[type=text], select, #cmb-voto-associado {
-	margin-bottom: 10px;	
-	width: 100%;
-}
-
-#clock {
-	text-align: center;
-	font-size: 40px;	
-}
-
-#encerrada {
-	color: red;
-}
-
-#area-finalizar {
-	display: none;
-	text-align: center;
-}
-
-#area-votacao div, #lbl-clock {
-	text-align: center;
-}
-
-input[name="radio-voto"], #area-votar {
-	margin-right: 5px;
-	margin-bottom: 10px;
-}
-
-label[for="sim-radio-voto"], label[for="nao-radio-voto"] {
-	font-size: 15px;
-	margin-right: 10px;
-}
-
-#btn-encerrar {
-	background-color: rgb(255, 85, 89);
-	border-color: rgb(255, 85, 89);
-}
-
-#lbl-voto-sim, #lbl-voto-NAO {
-	font-weight: normal;
->>>>>>> f10e9428b25df94175428da312ee99e950ea1567
 }

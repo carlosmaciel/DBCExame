@@ -13,10 +13,12 @@ public class RestService {
 		return builder.build();
 	}
 	
-	public ValidacaoCPF consumir(String cpf) throws Exception {	
+	public ValidacaoCPF consumir(String cpf) {	
 		RestTemplate restTemplate = new RestTemplate();
+		
 		return restTemplate.getForObject(
 				"https://user-info.herokuapp.com/users/" + cpf, ValidacaoCPF.class);
+		
 	}	
 	
 }

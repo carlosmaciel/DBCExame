@@ -42,7 +42,6 @@ public class AssociadoController {
 		try {
 			logger.info("Consultando associados.");
 			List<Associados> associados = associadoService.findAll();
-			logger.info("Associados: " + associados);
 			return ResponseEntity.ok(associados);
 		} catch (Exception e) {
 			logger.error("Erro ao consultar: " + e.getMessage());
@@ -55,7 +54,7 @@ public class AssociadoController {
 		try {
 			logger.info("Salvando associado. Nome: " + associado.getNome());
 			return ResponseEntity.ok(associadoService.saveAssociado(associado));
-		} catch (Exception e) {
+		}catch (Exception e) {
 			logger.error("Erro ao salvar associado: " + e.getMessage());
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
 		}

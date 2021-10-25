@@ -4,9 +4,9 @@
 			<div class="panel panel-primary">
 				<div class="panel-heading">Adicionar Associado</div>
 				<div class="panel-body" id="campos-associado">
-					<div class="alert alert-warning alert-dismissible alert-voto-falha" role="alert">
+					<div class="alert alert-warning alert-voto-falha" role="alert">
 						<label></label>
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<button type="button" class="close" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>

@@ -4,6 +4,12 @@
 			<div class="panel panel-primary">
 				<div class="panel-heading">Adicionar Pauta</div>
 				<div class="panel-body" id="campos-pauta">
+					<div class="alert alert-warning alert-voto-falha" role="alert">
+						<label></label>
+						<button type="button" class="close" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
 					<label>Nome:</label>
 					<input type="text" id="nome-pauta" name="nome-pauta"/>	
 							

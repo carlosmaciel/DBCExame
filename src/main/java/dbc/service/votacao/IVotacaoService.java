@@ -1,5 +1,7 @@
 package dbc.service.votacao;
 
+import org.springframework.web.client.RestClientException;
+
 import dbc.dto.Resultados;
 import dbc.dto.ValidacaoCPF;
 import dbc.model.Associados;
@@ -12,6 +14,6 @@ public interface IVotacaoService {
 		
 	Resultados informarResultado (Long idPauta) throws Exception;
 	
-	ValidacaoCPF validarCPF(String cpf) throws Exception;
+	ValidacaoCPF validarCPF(String cpf) throws RestClientException;
 
 }

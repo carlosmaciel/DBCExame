@@ -26,6 +26,9 @@ public class Pautas {
 	@Column(name="nome", nullable=false)
 	private String nome;
 	
+	@Column(name="sessao")
+	private Integer sessao;
+	
 	@OneToMany(mappedBy = "pauta", targetEntity = Votacoes.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JsonIgnoreProperties
 	private List<Votacoes> votacoes;
@@ -58,6 +61,14 @@ public class Pautas {
 
 	public void setVotacoes(List<Votacoes> votacoes) {
 		this.votacoes = votacoes;
+	}
+
+	public Integer getSessao() {
+		return sessao;
+	}
+
+	public void setSessao(Integer sessao) {
+		this.sessao = sessao;
 	}
 	
 }
