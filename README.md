@@ -14,13 +14,13 @@ Checkout: https://github.com/carlosmaciel/DBCExame
 - Porta 3306 liberada para mysql.
 - Garantir que o serviço MySQL80 esteja funcionando em services.msc.
 - Criar uma base chamada "dbc".
-- Executar o dbc.sql na pasta "db" na raiz do projeto a fim de criar as tabelas.
+- Executar o db.sql na pasta "db" na raiz do projeto a fim de criar as tabelas.
 - Garantir usuario root e senha root para a aplicação acessar o mysql. 
 
 # Executar
 - 1) Realizar o checkout do projeto no link GIT acima.
 - 2) Executar os requisitos para o banco de dados listados acima.
-- 3) Acessar pasta raiz do projeto executar: mvn spring-boot:run
+- 3) Acessar pasta raiz do projeto executar o comando: mvn spring-boot:run
 - 4) Após sucesso, acessar no browser: http://localhost:8080.
 
 # Observações
