@@ -1,6 +1,5 @@
 package dbc.service.pauta;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
