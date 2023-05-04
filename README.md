@@ -1,4 +1,4 @@
-# Sistema ainda não está finalizado
+# <<< Sistema em construção >>>
 
 # Desenvolvedor
 
